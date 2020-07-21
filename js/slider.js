@@ -1,5 +1,5 @@
 let slider = document.querySelector('#content-slider')
-let slider1 = document.querySelector('#content-slider1')
+let secondSlider = document.querySelector('.second-slider')
 
 function Slider(slider, movingSide) {
   slider.classList.add(`${movingSide}-slider`)
@@ -30,6 +30,10 @@ function Slider(slider, movingSide) {
 }
 
 
-let mainSlider = new Slider(slider, 'horizontal')
+let mainSlider = new Slider(slider, 'vertical')
 mainSlider.createDots()
+mainSlider.moveWithDots()
+
+let subSlider = new Slider(secondSlider, 'horizontal')
+// mainSlider.createDots()
 mainSlider.moveWithDots()

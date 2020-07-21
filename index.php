@@ -13,7 +13,14 @@
     <div class="slider-inner">
       <div class="frame frame-0">Frame 1</div>
       <div class="frame frame-1">Frame 2</div>
-      <div class="frame frame-2">Frame 3</div>
+      <div class="frame frame-2">Frame 3
+        <div class="slider second-slider">
+          <div class="slider-inner">
+            <div class="frame frame-0">Frame 3-1</div>
+            <div class="frame frame-1">Frame 3-2</div>
+          </div>
+        </div>
+      </div>
       <div class="frame frame-3">Frame 4</div>
       <div class="frame frame-4">Frame 5</div>
     </div>

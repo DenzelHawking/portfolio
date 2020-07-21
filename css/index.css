@@ -24,10 +24,10 @@ body {
   display: flex;
 }
 
-.slider.horizontal-slider .slider-inner {
+.slider.horizontal-slider > .slider-inner {
   flex-direction: row;
 }
-.slider.vertical-slider .slider-inner {
+.slider.vertical-slider > .slider-inner {
   flex-direction: column;
 }
 
@@ -54,3 +54,8 @@ body {
 }
 
 
+
+
+.second-slider {
+  position: relative;
+}
