@@ -1,10 +1,23 @@
 .skills-cube {
-  width: 200px;
-  height: 200px;
-  transform-style: preserve-3d;
+  width: 350px;
+  height: 300px;
   position: absolute;
   top: calc(50% - 100px);
   right: 200px;
+  transition: .5s;
+}
+
+.skills-cube:hover {
+  transform: scale(1.2);
+}
+
+.skills-cube__inner {
+  position: absolute;
+  top: calc(50% - 100px);
+  right: calc(50% - 100px);
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
   animation: rotateCube 10s linear infinite;
 }
 

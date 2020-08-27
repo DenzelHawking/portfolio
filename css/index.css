@@ -1,4 +1,198 @@
+/* ========================
+  main
+======================== */
 body {
   margin: 0;
   padding: 0;
+}
+
+
+
+
+/* ========================
+  content
+======================== */
+.content {
+  position: absolute;
+  top: calc(50% - 50vh);
+  left: calc(50% - 50vw);
+  width: 100vw;
+  height: 100vh;
+}
+
+
+.content__tab-cube {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  transform: rotateX(0deg) rotateY(0deg);
+  transform-style: preserve-3d;
+}
+
+
+/*
+  cube inner
+======================== */
+
+.current-tab {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: red;
+  transform-origin: center;
+
+  transform: translateZ(50vh);
+}
+
+.next-tab {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: green;
+}
+
+
+/*
+    next tab position
+======================== */
+
+.next-tab__top .next-tab {
+  transform: translateZ(-50vh) rotateX(90deg);
+  transform-origin: top;
+}
+
+.next-tab__bottom .next-tab {
+  transform: translateZ(-50vh) rotateX(-90deg);
+  transform-origin: bottom;
+}
+
+.next-tab__left .next-tab {
+  transform: translateZ(-50vw) rotateY(-90deg);
+  transform-origin: left;
+}
+
+.next-tab__right .next-tab {
+  transform: translateZ(-50vw) rotateY(90deg);
+  transform-origin: right;
+}
+
+
+
+.next-tab__top .current-tab {
+  transform: translateZ(50vh);
+}
+
+.next-tab__bottom .current-tab {
+  transform: translateZ(50vh);
+}
+
+.next-tab__left .current-tab {
+  transform: translateZ(50vw);
+}
+
+.next-tab__right .current-tab {
+  transform: translateZ(50vw);
+}
+
+
+
+.content__tab-cube.next-tab__top {
+  animation: rotateContentCubeTop 1.5s linear;
+}
+
+.content__tab-cube.next-tab__bottom {
+  animation: rotateContentCubeBottom 1.5s linear;
+}
+
+.content__tab-cube.next-tab__left {
+  animation: rotateContentCubeLeft 1.5s linear;
+}
+
+.content__tab-cube.next-tab__right {
+  animation: rotateContentCubeRight 1.5s linear;
+}
+
+
+
+/* ========================
+  animation
+======================== */
+
+@keyframes rotateContentCubeTop {
+  0% {
+    transform: scale(1);
+  }
+
+  30% {
+    transform: scale(.7);
+  }
+
+  70% {
+    transform: scale(.7) rotateX(-90deg);
+  }
+
+  100% {
+    transform: scale(1) rotateX(-90deg);
+  }
+}
+
+@keyframes rotateContentCubeBottom {
+  0% {
+    transform: scale(1);
+  }
+
+  30% {
+    transform: scale(.7);
+  }
+
+  70% {
+    transform: scale(.7) rotateX(90deg);
+  }
+
+  100% {
+    transform: scale(1) rotateX(90deg);
+  }
+}
+
+@keyframes rotateContentCubeLeft {
+  0% {
+    transform: scale(1);
+  }
+
+  30% {
+    transform: scale(.7);
+  }
+
+  70% {
+    transform: scale(.7) rotateY(90deg);
+  }
+
+  100% {
+    transform: scale(1) rotateY(90deg);
+  }
+}
+
+@keyframes rotateContentCubeRight {
+  0% {
+    transform: scale(1);
+  }
+
+  30% {
+    transform: scale(.7);
+  }
+
+  70% {
+    transform: scale(.7) rotateY(-90deg);
+  }
+
+  100% {
+    transform: scale(1) rotateY(-90deg);
+  }
 }
