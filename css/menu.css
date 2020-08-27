@@ -17,6 +17,7 @@
   top: calc(50% - 2.5vw);
   width: 5vw;
   height: 5vw;
+  font-size: 1.5vw;
   line-height: 5vw;
   text-align: center;
   border-radius: 5vw;
@@ -122,3 +123,17 @@
     transform: rotate(-360deg)
   }
 }
+
+
+
+
+/* ========================
+  adaptive
+======================== */
+
+
+/* .menu {
+  transform: scale(3);
+  left: calc(50% - 10vw);
+  bottom: 20vw;
+} */
