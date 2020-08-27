@@ -1,3 +1,6 @@
+/* ========================
+  main
+======================== */
 .skills-cube {
   width: 350px;
   height: 300px;
@@ -37,6 +40,10 @@
   background-image: radial-gradient(transparent, #000000ba);
 }
 
+
+/*
+  skills cube property
+======================== */
 
 .skills-cube__side-0 {
   top: 0;
@@ -91,6 +98,10 @@
   background-size: 50%;
 }
 
+
+/* ========================
+  animation
+======================== */
 
 @keyframes rotateCube {
   0% {

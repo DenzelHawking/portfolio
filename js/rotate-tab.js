@@ -19,4 +19,4 @@ function getRotateSide() {
   }, 2000);
 };
 
-document.body.onclick = getRotateSide;
+// document.body.onclick = getRotateSide;

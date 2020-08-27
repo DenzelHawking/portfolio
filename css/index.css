@@ -43,10 +43,9 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: red;
   transform-origin: center;
-
   transform: translateZ(50vh);
+  background: #fff;
 }
 
 .next-tab {
@@ -55,7 +54,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: green;
+  background: #fff;
 }
 
 
@@ -85,22 +84,15 @@ body {
 
 
 
-.next-tab__top .current-tab {
-  transform: translateZ(50vh);
-}
-
+.next-tab__top .current-tab,
 .next-tab__bottom .current-tab {
   transform: translateZ(50vh);
 }
 
-.next-tab__left .current-tab {
-  transform: translateZ(50vw);
-}
-
+.next-tab__left .current-tab,
 .next-tab__right .current-tab {
   transform: translateZ(50vw);
 }
-
 
 
 .content__tab-cube.next-tab__top {
