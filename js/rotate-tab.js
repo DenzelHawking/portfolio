@@ -1,18 +1,19 @@
-let contentTab = document.querySelector('.content__tab-cube');
-let currentTab = document.querySelector('.current-tab');
-let nextTab = document.querySelector('.next-tab');
-let tabsInner = document.querySelectorAll('.pages');
+const contentTab = document.querySelector('.content__tab-cube');
+const currentTab = document.querySelector('.current-tab');
+const nextTab = document.querySelector('.next-tab');
+const tabsInner = document.querySelectorAll('.pages');
 
-let rotateSide = ['top', 'bottom', 'left', 'right'];
+const rotateSide = ['top', 'bottom', 'left', 'right'];
+
 let currentTabIndex = 0;
 
 currentTab.innerHTML = tabsInner[0].innerHTML;
 
 
 function getRotateSide(index) {
-  if (currentTabIndex == index) return;
+  if (currentTabIndex === index) return;
 
-  let randomNumber = Math.floor(Math.random() * 4);
+  const randomNumber = Math.floor(Math.random() * 4);
   currentTabIndex = index;
   nextTab.innerHTML = tabsInner[index].innerHTML;
 

@@ -1,8 +1,179 @@
+/* ================
+    menu icon
+  ================ */
+.menu__icon {
+  position: absolute;
+  top: 1.5vw;
+  left: 1.5vw;
+  width: 2.5vw;
+  height: 2.5vw;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu__line {
+  position: absolute;
+  width: 100%;
+  height: .3vw;
+  background: #fff;
+  transform-origin: center;
+}
+
+.menu__line-0 {
+  top: .3vw;
+}
+
+.menu__line-1 {
+  top: calc(50% - .3vw/2);
+  transition-delay: .15s;
+}
+
+.menu__line-2 {
+  top: calc(100% - .6vw);
+}
+
+
+/*
+    set menu icon animation
+  ================ */
+.menu__icon.opened .menu__line-0 {
+  animation: menuOpenLine1 .3s linear forwards;
+}
+
+.menu__icon.opened .menu__line-1 {
+  opacity: 0;
+}
+
+.menu__icon.opened .menu__line-2 {
+  animation: menuOpenLine2 .3s linear forwards;
+}
+
+.menu__icon.closed .menu__line-0 {
+  animation: menuCloseLine1 .3s linear forwards;
+}
+
+.menu__icon.closed .menu__line-1 {
+  opacity: 1;
+}
+
+.menu__icon.closed .menu__line-2 {
+  animation: menuCloseLine2 .3s linear forwards;
+}
+
+
+/*
+    menu icon animation
+  ================ */
+@keyframes menuOpenLine1 {
+  50% {
+    top: calc(50% - .3vw/2);
+    transform: rotate(0);
+  }
+
+  100% {
+    top: calc(50% - .3vw/2);
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes menuOpenLine2 {
+  50% {
+    top: calc(50% - .3vw/2);
+    transform: rotate(0);
+  }
+
+  100% {
+    top: calc(50% - .3vw/2);
+    transform: rotate(-45deg);
+  }
+}
+
+@keyframes menuCloseLine1 {
+  0% {
+    top: calc(50% - .3vw/2);
+    transform: rotate(45deg);
+  }
+  
+  50% {
+    top: calc(50% - .3vw/2);
+    transform: rotate(0);
+  }
+
+  100% {
+    top: .3vw;
+  }
+}
+
+@keyframes menuCloseLine2 {
+  0% {
+    top: calc(50% - .3vw/2);
+    transform: rotate(-45deg);
+  }
+  
+  50% {
+    top: calc(50% - .3vw/2);
+    transform: rotate(0);
+  }
+
+  100% {
+    top: calc(100% - .6vw);
+  }
+}
+
+
+/* ================
+    menu block
+  ================ */
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20vw;
+  height: 100%;
+  background: #071f31;
+  transition: transform .3s;
+  transform: translateX(-100%);
+  z-index: 1;
+}
+
+.menu.active {
+  transform: translateX(0);
+}
+
+.menu__inner {
+  position: absolute;
+  left: 0;
+  top: 7vw;
+  width: 100%;
+}
+
+.menu__item {
+  width: 100%;
+  height: 3vw;
+  line-height: 3vw;
+  font-size: 1.5vw;
+  color: #fff;
+  cursor: pointer;
+  padding-left: 2vw;
+  margin-bottom: 1vw;
+  box-sizing: border-box;
+  transition: color .3s;
+}
+
+.menu__item:hover {
+  color: #0175b5;
+}
+
+.menu__item.active {
+  color: #1fafff;
+}
+
+
 /* ========================
   main
 ======================== */
 
-.menu {
+/* .menu {
   position: absolute;
   bottom: 5vw;
   left: 5vw;
@@ -58,14 +229,14 @@
   text-align: center;
   font-size: 1vw;
   line-height: 1vw;
-}
+} */
 
 
 /*
   animation moving
 ======================== */
 
-.circle-menu.active {
+/* .circle-menu.active {
   animation: rotateMenu 1.5s ease;
 }
 
@@ -107,14 +278,14 @@
 
 .circle-menu .circle-menu__item-4 {
   transition-delay: .8s;
-}
+} */
 
 
 /* ========================
   animation
 ======================== */
 
-@keyframes rotateMenu {
+/* @keyframes rotateMenu {
   0% {
     transform: rotate(0deg)
   }
@@ -122,7 +293,7 @@
   100% {
     transform: rotate(-360deg)
   }
-}
+} */
 
 
 
@@ -130,8 +301,6 @@
 /* ========================
   adaptive
 ======================== */
-
-
 /* .menu {
   transform: scale(3);
   left: calc(50% - 10vw);

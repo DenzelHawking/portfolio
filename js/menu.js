@@ -1,14 +1,34 @@
-let menuBtn = document.querySelector('.circle-menu');
-let menuItem = document.querySelectorAll('.circle-menu__item');
+const menuIcon = document.querySelector('.menu__icon');
+const menu = document.querySelector('.menu');
+const menuItem = document.querySelectorAll('.menu__item');
+let previousTab = 0;
 
-
-menuBtn.onclick = () => menuBtn.classList.toggle('active');
+menuIcon.onclick = () => {
+  menuIcon.classList.contains('opened') ? closeMenu() : openMenu();
+}
 
 menuItem.forEach((elem, index) => {
   elem.onclick = () => {
-    event.stopPropagation();
-    menuBtn.classList.remove('active');
+    elem.classList.add('active');
+    menuItem[previousTab].classList.remove('active');
+    previousTab = index;
 
-    getRotateSide(index)
-  };
-});
+    setTimeout(() => {
+      getRotateSide(index);
+    }, 300);
+    
+    closeMenu();
+  }
+})
+
+function openMenu() {
+  menuIcon.classList.add('opened');
+  menuIcon.classList.remove('closed');
+  menu.classList.add('active');
+}
+
+function closeMenu() {
+  menuIcon.classList.add('closed');
+  menuIcon.classList.remove('opened');
+  menu.classList.remove('active');
+}

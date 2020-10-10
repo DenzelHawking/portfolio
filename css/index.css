@@ -6,6 +6,7 @@ body {
   padding: 0;
 
   background: url(../images/background.jpg);
+  font-family: Arial;
 }
 
 .pages {
@@ -18,8 +19,6 @@ body {
 ======================== */
 .content {
   position: absolute;
-  top: calc(50% - 50vh);
-  left: calc(50% - 50vw);
   width: 100vw;
   height: 100vh;
 }
@@ -118,6 +117,20 @@ body {
   animation: rotateContentCubeRight 1.5s linear;
 }
 
+/* ========================
+  text content
+======================== */
+
+.text {
+  position: absolute;
+  left: 5vw;
+  top: 15vw;
+  width: 50%;  
+  font-size: 2vw;
+  line-height: 3vw;
+}
+
+/* rotateY(25deg) */
 
 
 /* ========================
