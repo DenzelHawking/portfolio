@@ -9,9 +9,10 @@ menuIcon.onclick = () => {
 
 menuItem.forEach((elem, index) => {
   elem.onclick = () => {
-    elem.classList.add('active');
-    menuItem[previousTab].classList.remove('active');
-    previousTab = index;
+    // elem.classList.add('active');
+    // menuItem[previousTab].classList.remove('active');
+    // previousTab = index;
+    getCurentTab(index);
 
     setTimeout(() => {
       getRotateSide(index);
@@ -20,6 +21,13 @@ menuItem.forEach((elem, index) => {
     closeMenu();
   }
 })
+
+function getCurentTab(index) {
+  console.log(index);
+  menuItem[index].classList.add('active');
+  menuItem[previousTab].classList.remove('active');
+  previousTab = index;
+}
 
 function openMenu() {
   menuIcon.classList.add('opened');

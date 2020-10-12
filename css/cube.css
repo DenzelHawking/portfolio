@@ -2,24 +2,24 @@
   main
 ======================== */
 .skills-cube {
-  width: 350px;
-  height: 300px;
+  width: 26vw;
+  height: 22vw;
   position: absolute;
-  top: calc(50% - 100px);
-  right: 200px;
-  transition: .5s;
+  top: calc(50% - 7.5vw);
+  right: 15vw;
+  transition: transform .5s;
   transform-style: preserve-3d;
 }
 
 .skills-cube::before {
   content: '';
   position: absolute;
-  top: calc(50% - 50px);
-  left: calc(50% - 50px);
-  width: 100px;
-  height: 100px;
-  border-radius: 100px;
-  background: radial-gradient(#0062ff, 10px, transparent 62%);
+  top: calc(50% - 3.75vw);
+  left: calc(50% - 3.75vw);
+  width: 7.5vw;
+  height: 7.5vw;
+  border-radius: 7.5vw;
+  background: radial-gradient(#0062ff, .75vw, transparent 62%);
 }
 
 .skills-cube:hover {
@@ -28,18 +28,21 @@
 
 .skills-cube__inner {
   position: absolute;
-  top: calc(50% - 100px);
-  right: calc(50% - 100px);
-  width: 200px;
-  height: 200px;
+  top: calc(50% - 7.5vw);
+  right: calc(50% - 7.5vw);
+  width: 15vw;
+  height: 15vw;
   transform-style: preserve-3d;
+}
+
+.current-tab .skills-cube__inner {
   animation: rotateCube 10s linear infinite;
 }
 
 .skills-cube__side {
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 15vw;
+  height: 15vw;
 }
 
 .skills-cube__side::before {
@@ -61,15 +64,15 @@
 .skills-cube__side-0 {
   top: 0;
   left: 0;
-  transform: translateZ(100px);
+  transform: translateZ(7.5vw);
   background: url(../images/html_icon.png) center no-repeat;
   background-size: 50%;
 }
 
 .skills-cube__side-1 {
   top: 0;
-  left: -200px;
-  transform: translateZ(100px) rotateY(-90deg);
+  left: -15vw;
+  transform: translateZ(7.5vw) rotateY(-90deg);
   transform-origin: right;
   background: url(../images/css_icon.png) center no-repeat;
   background-size: 50%;
@@ -77,26 +80,26 @@
 
 .skills-cube__side-2 {
   top: 0;
-  left: 200px;
-  transform: translateZ(100px) rotateY(90deg);
+  left: 15vw;
+  transform: translateZ(7.5vw) rotateY(90deg);
   transform-origin: left;
   background: url(../images/js_icon.png) center no-repeat;
   background-size: 50%;
 }
 
 .skills-cube__side-3 {
-  top: -200px;
+  top: -15vw;
   left: 0;
-  transform: translateZ(100px) rotateX(90deg);
+  transform: translateZ(7.5vw) rotateX(90deg);
   transform-origin: bottom;
   background: url(../images/php_icon.png) center no-repeat;
   background-size: 50%;
 }
 
 .skills-cube__side-4 {
-  top: 200px;
+  top: 15vw;
   left: 0;
-  transform: translateZ(100px) rotateX(-90deg);
+  transform: translateZ(7.5vw) rotateX(-90deg);
   transform-origin: top;
   background: url(../images/golang_icon.png) center no-repeat;
   background-size: 50%;
@@ -105,7 +108,7 @@
 .skills-cube__side-5 {
   top: 0;
   left: 0;
-  transform: translateZ(-100px) rotateY(180deg);
+  transform: translateZ(-7.5vw) rotateY(180deg);
   transform-origin: bottom;
   background: url(../images/mysql_icon.png) center no-repeat;
   background-size: 50%;

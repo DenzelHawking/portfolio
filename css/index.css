@@ -2,11 +2,13 @@
   main
 ======================== */
 body {
+  width: 100vw;
+  height: 100vh;
+  font-family: Arial;
+  background: url(../images/background.jpg) center no-repeat;
+  background-size: cover;
   margin: 0;
   padding: 0;
-
-  background: url(../images/background.jpg);
-  font-family: Arial;
 }
 
 .pages {
@@ -127,7 +129,17 @@ body {
   top: 15vw;
   width: 50%;  
   font-size: 2vw;
-  line-height: 3vw;
+  line-height: 1.5;
+}
+
+.main-tab .text {
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  text-align: center;
+  padding: 8vw 15vw;
+  box-sizing: border-box;
 }
 
 /* rotateY(25deg) */
