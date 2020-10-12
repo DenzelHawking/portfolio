@@ -25,8 +25,11 @@ function getRotateSide(index) {
 };
 
 function showTab(side, tab) {
-  if (tab >= menuItem.length) tab = 0;
-  if (tab <= 0) tab = menuItem.length - 1;
+  if (tab >= menuItem.length) {
+    tab = 0;
+  } else if (tab <= 0) {
+    tab = menuItem.length - 1;
+  }
 
   currentTabIndex = tab;
 
@@ -41,23 +44,12 @@ function showTab(side, tab) {
 
 document.addEventListener('keydown', (e) => {
   if (letRotate) {
-    if (e.key === 'ArrowUp') {
-      showTab('top', currentTabIndex + 1)
-    }
-  
-    if (e.key === 'ArrowRight') {
-      showTab('right', currentTabIndex + 1)
-    }
-
-    if (e.key === 'ArrowLeft') {
-      showTab('left', currentTabIndex - 1)
-    }
-  
-    if (e.key === 'ArrowDown') {
-      showTab('bottom', currentTabIndex - 1)
-    }
+    if (e.key === 'ArrowUp') showTab('top', currentTabIndex + 1);
+    if (e.key === 'ArrowRight') showTab('right', currentTabIndex + 1);
+    if (e.key === 'ArrowLeft') showTab('left', currentTabIndex - 1);
+    if (e.key === 'ArrowDown') showTab('bottom', currentTabIndex - 1);
   }
-  
+
   letRotate = false;
   setTimeout(() => letRotate = true, 2000)
 })
