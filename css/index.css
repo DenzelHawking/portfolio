@@ -38,6 +38,81 @@ body {
   color: #fff;
 }
 
+/* 
+  navigation keyboard
+======================== */
+.navigation-keyboard {
+  position: absolute;
+  bottom: 5vw;
+  right: 5vw;
+  width: 12.4vw;
+  height: 8.2vw;
+  z-index: 9;
+}
+
+.navigation-keyboard .arrow {
+  position: absolute;
+  width: 4vw;
+  height: 4vw;
+  background: #a3dcfa;
+  cursor: pointer;
+  opacity: .5;
+  transition: opacity .2s;
+}
+
+.navigation-keyboard .arrow:hover,
+.navigation-keyboard .arrow.active {
+  opacity: 1;
+}
+
+
+.navigation-keyboard .arrot__up {
+  top: 0;
+  left: calc(50% - 2vw);
+}
+
+.navigation-keyboard .arrot__down {
+  bottom: 0;
+  left: calc(50% - 2vw);
+}
+
+.navigation-keyboard .arrot__left {
+  bottom: 0;
+  left: 0;
+}
+
+.navigation-keyboard .arrot__right {
+  bottom: 0;
+  right: 0;
+}
+
+
+
+/* 
+  text content
+======================== */
+
+.text {
+  position: absolute;
+  left: 5vw;
+  top: 15vw;
+  width: 50%;  
+  font-size: 2vw;
+  line-height: 1.5;
+}
+
+.main-tab .text {
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  text-align: center;
+  padding: 8vw 15vw;
+  box-sizing: border-box;
+}
+
+/* rotateY(25deg) */
+
 
 /*
   cube inner
@@ -118,31 +193,6 @@ body {
 .content__tab-cube.next-tab__right {
   animation: rotateContentCubeRight 1.5s linear;
 }
-
-/* ========================
-  text content
-======================== */
-
-.text {
-  position: absolute;
-  left: 5vw;
-  top: 15vw;
-  width: 50%;  
-  font-size: 2vw;
-  line-height: 1.5;
-}
-
-.main-tab .text {
-  top: auto;
-  bottom: 0;
-  left: 0;
-  width: 100vw;
-  text-align: center;
-  padding: 8vw 15vw;
-  box-sizing: border-box;
-}
-
-/* rotateY(25deg) */
 
 
 /* ========================
