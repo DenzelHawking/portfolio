@@ -15,6 +15,17 @@ body {
   display: none;
 }
 
+.logo {
+  position: absolute;
+  top: 2vw;
+  left: 5vw;
+  width: 5vw;
+  height: 5vw;
+  /* background: url(../images/logo.png) center no-repeat; */
+  background-size: contain;
+  z-index: 9;
+}
+
 
 /* ========================
   content
@@ -25,18 +36,14 @@ body {
   height: 100vh;
 }
 
-
 .content__tab-cube {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100vw;
   height: 100vh;
-
+  color: #fff;
   transform: rotateX(0deg) rotateY(0deg);
   transform-style: preserve-3d;
-  color: #fff;
 }
+
 
 /* 
   navigation keyboard
@@ -87,21 +94,23 @@ body {
 }
 
 
-
-/* 
+/*
   text content
 ======================== */
+.title {
+  text-align: center;
+}
 
-.text {
+.description {
   position: absolute;
   left: 5vw;
   top: 15vw;
-  width: 50%;  
+  width: 50%;
   font-size: 2vw;
   line-height: 1.5;
 }
 
-.main-tab .text {
+.main-tab .description {
   top: auto;
   bottom: 0;
   left: 0;
@@ -111,13 +120,10 @@ body {
   box-sizing: border-box;
 }
 
-/* rotateY(25deg) */
-
 
 /*
   cube inner
 ======================== */
-
 .current-tab {
   position: absolute;
   top: 0;
@@ -144,7 +150,6 @@ body {
 /*
     next tab position
 ======================== */
-
 .next-tab__top .next-tab {
   transform: translateZ(-50vh) rotateX(90deg);
   transform-origin: top;
@@ -165,8 +170,6 @@ body {
   transform-origin: right;
 }
 
-
-
 .next-tab__top .current-tab,
 .next-tab__bottom .current-tab {
   transform: translateZ(50vh);
@@ -178,6 +181,9 @@ body {
 }
 
 
+/*
+  attache animation
+======================== */
 .content__tab-cube.next-tab__top {
   animation: rotateContentCubeTop 1.5s linear;
 }
@@ -198,7 +204,6 @@ body {
 /* ========================
   animation
 ======================== */
-
 @keyframes rotateContentCubeTop {
   0% {
     transform: scale(1);

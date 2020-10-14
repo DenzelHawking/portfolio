@@ -43,6 +43,12 @@
   position: absolute;
   width: 15vw;
   height: 15vw;
+  filter: brightness(.3);
+  transition: .5s;
+}
+
+.skills-cube:hover .skills-cube__side {
+  filter: brightness(1);
 }
 
 .skills-cube__side::before {

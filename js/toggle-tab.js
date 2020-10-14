@@ -28,19 +28,19 @@ currentTab.innerHTML = tabsInner[0].innerHTML;
 document.addEventListener('keydown', (e) => {
   if (letRotate) {
     if (e.key === 'ArrowUp') {
-      showTab('top', previousTab - 1);
+      showTab('top', previousTab - 1)
       showClickedArrow(arrowUp);
     }
     if (e.key === 'ArrowRight') {
-      showTab('right', previousTab + 1);
+      showTab('right', previousTab + 1)
       showClickedArrow(arrowRight);
     }
     if (e.key === 'ArrowLeft') {
-      showTab('left', previousTab - 1);
+      showTab('left', previousTab - 1)
       showClickedArrow(arrowLeft);
     }
     if (e.key === 'ArrowDown') {
-      showTab('bottom', previousTab + 1);
+      showTab('bottom', previousTab + 1)
       showClickedArrow(arrowDown);
     }
   }
@@ -83,6 +83,7 @@ function showTab(side, tab) {
 
   nextTab.innerHTML = tabsInner[tab].innerHTML;
   contentTab.classList.add(`next-tab__${side}`);
+
   setTimeout(() => currentTab.innerHTML = nextTab.innerHTML, 1500);
   setTimeout(() => contentTab.classList.remove(`next-tab__${side}`), 2000);
   getCurentTab(tab);
