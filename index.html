@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="./css/menu.css">
   <link rel="stylesheet" href="./css/cube.css">
+  <link rel="stylesheet" href="./css/project.css">
+  <link rel="stylesheet" href="./css/contact.css">
 </head>
 
 <body>
@@ -45,16 +47,16 @@
 
     <div class="navigation-keyboard">
       <div class="arrow arrot__up">
-        <div class="arrow__title">Main</div>
+        <div class="arrow__title"></div>
       </div>
       <div class="arrow arrot__down">
-        <div class="arrow__title">Our projects</div>
+        <div class="arrow__title"></div>
       </div>
       <div class="arrow arrot__left">
-        <div class="arrow__title">Our skillse</div>
+        <div class="arrow__title"></div>
       </div>
       <div class="arrow arrot__right">
-        <div class="arrow__title">Contact us</div>
+        <div class="arrow__title"></div>
       </div>
     </div>
 
@@ -113,12 +115,16 @@
 
     <div class="pages pages-3 our-projects">
       <div class="our-projects-tab">
-        <div class="title">our project s</div>
+        <div class="title">our projects</div>
         <div class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos velit pariatur quaerat voluptatum hic,
-          aliquid expedita perspiciatis ab laboriosam quam beatae assumenda sunt consequatur voluptas aut doloremque
-          tempore esse repellendus debitis earum ex voluptatibus ullam! Iure illum ea fugiat voluptatibus sed! Optio vero
-          dolorem doloremque doloribus aut commodi voluptates mollitia!
+          <div class="project__list">
+            <div class="project__item project__item-0"></div>
+            <div class="project__item project__item-1"></div>
+            <div class="project__item project__item-2"></div>
+            <div class="project__item project__item-3"></div>
+            <div class="project__item project__item-4"></div>
+            <div class="project__item project__item-5"></div>
+          </div>
         </div>
       </div>
       
@@ -128,10 +134,13 @@
       <div class="contact-us-tab">
         <div class="title">contact us</div>
         <div class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos velit pariatur quaerat voluptatum hic,
-          aliquid expedita perspiciatis ab laboriosam quam beatae assumenda sunt consequatur voluptas aut doloremque
-          tempore esse repellendus debitis earum ex voluptatibus ullam! Iure illum ea fugiat voluptatibus sed! Optio vero
-          dolorem doloremque doloribus aut commodi voluptates mollitia!
+          <form id="contactForm">
+
+            <input type="text" placeholder="Your name" name="name">
+            <input type="email" placeholder="Your email" name="mail">
+            <textarea placeholder="Write your message" name="message"></textarea>
+            <button type="submit">Send</button>
+          </form>
         </div>
       </div>
       
@@ -157,6 +166,8 @@
   </div> -->
 
   <script src="./js/toggle-tab.js"></script>
+  <script src="./js/project.js"></script>
+  <script src="./js/request-form.js"></script>
 </body>
 
 </html>

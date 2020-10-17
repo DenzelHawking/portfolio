@@ -69,8 +69,8 @@ function getRotateSide(index) {
   nextTab.innerHTML = tabsInner[index].innerHTML;
   contentTab.classList.add(`next-tab__${rotateSide[randomNumber]}`);
 
-  setTimeout(() => currentTab.innerHTML = nextTab.innerHTML, 1500);
-  setTimeout(() => contentTab.classList.remove(`next-tab__${rotateSide[randomNumber]}`), 2000);
+  setTimeout(() => currentTab.innerHTML = nextTab.innerHTML, 1200);
+  setTimeout(() => contentTab.classList.remove(`next-tab__${rotateSide[randomNumber]}`), 1200);
   getCurentTab(index);
 };
 
@@ -84,8 +84,8 @@ function showTab(side, tab) {
   nextTab.innerHTML = tabsInner[tab].innerHTML;
   contentTab.classList.add(`next-tab__${side}`);
 
-  setTimeout(() => currentTab.innerHTML = nextTab.innerHTML, 1500);
-  setTimeout(() => contentTab.classList.remove(`next-tab__${side}`), 2000);
+  setTimeout(() => currentTab.innerHTML = nextTab.innerHTML, 1200);
+  setTimeout(() => contentTab.classList.remove(`next-tab__${side}`), 1200);
   getCurentTab(tab);
 };
 
