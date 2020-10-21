@@ -10,9 +10,10 @@ const menuIcon = document.querySelector('.menu__icon');
 const menuItem = document.querySelectorAll('.menu__item');
 
 // other variables
-let previousTab = 0;
-let letRotate = true;
+let canClick = true;
 const rotateSide = ['top', 'bottom', 'left', 'right'];
+
+const pageTitle = ['#/main', '#/about', '#/skills', '#/projects', '#/contact'];
 
 const pages = {
   '#/main': 0,
@@ -22,33 +23,33 @@ const pages = {
   '#/contact': 4,
 }
 
-const pageTitle = ['#/main', '#/about', '#/skills', '#/projects', '#/contact'];
+let previousTab = pages[window.location.hash];
 
-if (window.location.hash === '') window.location.hash = '#/main';
-
-showTab('', pages[window.location.hash], true);
+verifyURL();
+window.onhashchange = () => verifyURL();
 
 
 // events
 document.addEventListener('keydown', (e) => {
-  if (letRotate) {
+  if (canClick) {
     if (e.key === 'ArrowUp') showTab('top', previousTab - 1);
     if (e.key === 'ArrowRight') showTab('right', previousTab + 1);
     if (e.key === 'ArrowLeft') showTab('left', previousTab - 1);
     if (e.key === 'ArrowDown') showTab('bottom', previousTab + 1);
+    letClick(2000)
   }
-
-  letRotate = false;
-  setTimeout(() => letRotate = true, 2000);
 })
 
 menuIcon.onclick = () => {
-  wrapper.classList.contains('menu-opened') ? closeMenu() : openMenu();
+  if (canClick) {
+    wrapper.classList.contains('menu-opened') ? closeMenu() : openMenu();
+    letClick(500)
+  }
 }
 
 menuItem.forEach((elem, index) => {
   elem.onclick = () => {
-    setTimeout(() => getRotateSide(index), 300);
+    setTimeout(() => getRotateSide(index), 500);
     closeMenu();
   }
 })
@@ -89,18 +90,32 @@ function showTab(side, tab, onload) {
 // toggle menu
 function openMenu() {
   wrapper.classList.add('menu-opened');
+  wrapper.classList.add('perspective-animation');
   wrapper.classList.remove('menu-closed');
 }
 
 function closeMenu() {
   wrapper.classList.remove('menu-opened');
   wrapper.classList.add('menu-closed');
+  setTimeout(() => {
+    wrapper.classList.remove('perspective-animation');
+  }, 500);
 }
 
 // others
 function getCurentTab(index) {
-  menuItem[index].classList.add('active');
   menuItem[previousTab].classList.remove('active');
+  menuItem[index].classList.add('active');
   previousTab = index;
   window.location.hash = pageTitle[index];
+}
+
+function letClick(timeout) {
+  canClick = false;
+  setTimeout(() => canClick = true, timeout);
+}
+
+function verifyURL() {
+  if (!pageTitle.includes(window.location.hash)) window.location.hash = '#/main';
+  showTab('', pages[window.location.hash], true);
 }
