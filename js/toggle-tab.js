@@ -10,20 +10,10 @@ const menuIcon = document.querySelector('.menu__icon');
 const menuItem = document.querySelectorAll('.menu__item');
 
 // other variables
-let canClick = true;
 const rotateSide = ['top', 'bottom', 'left', 'right'];
-
 const pageTitle = ['#/main', '#/about', '#/skills', '#/projects', '#/contact'];
-
-const pages = {
-  '#/main': 0,
-  '#/about': 1,
-  '#/skills': 2,
-  '#/projects': 3,
-  '#/contact': 4,
-}
-
-let previousTab = pages[window.location.hash];
+let canClick = true;
+let previousTab = pageTitle.indexOf(window.location.hash);
 
 verifyURL();
 window.onhashchange = () => verifyURL();
@@ -49,23 +39,13 @@ menuIcon.onclick = () => {
 
 menuItem.forEach((elem, index) => {
   elem.onclick = () => {
-    setTimeout(() => getRotateSide(index), 500);
+    if (previousTab !== index) setTimeout(() => showTab(rotateSide[Math.floor(Math.random() * 4)], index), 500);
     closeMenu();
   }
 })
 
 
 // toggle tab
-function getRotateSide(index) {
-  if (previousTab === index) return;
-
-  const randomNumber = Math.floor(Math.random() * 4);
-  nextTab.innerHTML = tabsInner[index].innerHTML;
-  contentTab.classList.add(`next-tab__${rotateSide[randomNumber]}`);
-
-  showTab(rotateSide[randomNumber], index)
-};
-
 function showTab(side, tab, onload) {
   if (tab >= menuItem.length) {
     tab = 0;
@@ -97,9 +77,7 @@ function openMenu() {
 function closeMenu() {
   wrapper.classList.remove('menu-opened');
   wrapper.classList.add('menu-closed');
-  setTimeout(() => {
-    wrapper.classList.remove('perspective-animation');
-  }, 500);
+  setTimeout(() => wrapper.classList.remove('perspective-animation'), 500);
 }
 
 // others
@@ -107,7 +85,7 @@ function getCurentTab(index) {
   menuItem[previousTab].classList.remove('active');
   menuItem[index].classList.add('active');
   previousTab = index;
-  window.location.hash = pageTitle[index];
+  setTimeout(() => window.location.hash = pageTitle[index], 1200)
 }
 
 function letClick(timeout) {
@@ -117,5 +95,5 @@ function letClick(timeout) {
 
 function verifyURL() {
   if (!pageTitle.includes(window.location.hash)) window.location.hash = '#/main';
-  showTab('', pages[window.location.hash], true);
+  showTab('', pageTitle.indexOf(window.location.hash), true);
 }
