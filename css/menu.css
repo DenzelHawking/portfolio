@@ -36,27 +36,27 @@
 /*
     set menu icon animation
   ================ */
-.menu__icon.opened .menu__line-0 {
+.wrapper.menu-opened .menu__icon .menu__line-0 {
   animation: menuOpenLine1 .3s linear forwards;
 }
 
-.menu__icon.opened .menu__line-1 {
+.wrapper.menu-opened .menu__icon .menu__line-1 {
   opacity: 0;
 }
 
-.menu__icon.opened .menu__line-2 {
+.wrapper.menu-opened .menu__icon .menu__line-2 {
   animation: menuOpenLine2 .3s linear forwards;
 }
 
-.menu__icon.closed .menu__line-0 {
+.wrapper.menu-closed .menu__icon .menu__line-0 {
   animation: menuCloseLine1 .3s linear forwards;
 }
 
-.menu__icon.closed .menu__line-1 {
+.wrapper.menu-closed .menu__icon .menu__line-1 {
   opacity: 1;
 }
 
-.menu__icon.closed .menu__line-2 {
+.wrapper.menu-closed .menu__icon .menu__line-2 {
   animation: menuCloseLine2 .3s linear forwards;
 }
 
@@ -137,7 +137,7 @@
   z-index: 1;
 }
 
-.menu.active {
+.wrapper.menu-opened .menu {
   transform: translateX(0);
 }
 

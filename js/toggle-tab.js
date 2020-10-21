@@ -1,19 +1,12 @@
 // content variables
+const wrapper = document.querySelector('.wrapper');
 const contentTab = document.querySelector('.content__tab-cube');
 const currentTab = document.querySelector('.current-tab');
 const nextTab = document.querySelector('.next-tab');
 const tabsInner = document.querySelectorAll('.pages');
 
-// navigation keyboard variables
-const arrowUp = document.querySelector('.arrot__up');
-const arrowDown = document.querySelector('.arrot__down');
-const arrowLeft = document.querySelector('.arrot__left');
-const arrowRight = document.querySelector('.arrot__right');
-
-
 // menu variables
 const menuIcon = document.querySelector('.menu__icon');
-const menu = document.querySelector('.menu');
 const menuItem = document.querySelectorAll('.menu__item');
 
 // other variables
@@ -21,28 +14,28 @@ let previousTab = 0;
 let letRotate = true;
 const rotateSide = ['top', 'bottom', 'left', 'right'];
 
+const pages = {
+  '#/main': 0,
+  '#/about': 1,
+  '#/skills': 2,
+  '#/projects': 3,
+  '#/contact': 4,
+}
 
-currentTab.innerHTML = tabsInner[0].innerHTML;
+const pageTitle = ['#/main', '#/about', '#/skills', '#/projects', '#/contact'];
+
+if (window.location.hash === '') window.location.hash = '#/main';
+
+showTab('', pages[window.location.hash], true);
+
 
 // events
 document.addEventListener('keydown', (e) => {
   if (letRotate) {
-    if (e.key === 'ArrowUp') {
-      showTab('top', previousTab - 1)
-      showClickedArrow(arrowUp);
-    }
-    if (e.key === 'ArrowRight') {
-      showTab('right', previousTab + 1)
-      showClickedArrow(arrowRight);
-    }
-    if (e.key === 'ArrowLeft') {
-      showTab('left', previousTab - 1)
-      showClickedArrow(arrowLeft);
-    }
-    if (e.key === 'ArrowDown') {
-      showTab('bottom', previousTab + 1)
-      showClickedArrow(arrowDown);
-    }
+    if (e.key === 'ArrowUp') showTab('top', previousTab - 1);
+    if (e.key === 'ArrowRight') showTab('right', previousTab + 1);
+    if (e.key === 'ArrowLeft') showTab('left', previousTab - 1);
+    if (e.key === 'ArrowDown') showTab('bottom', previousTab + 1);
   }
 
   letRotate = false;
@@ -50,7 +43,7 @@ document.addEventListener('keydown', (e) => {
 })
 
 menuIcon.onclick = () => {
-  menuIcon.classList.contains('opened') ? closeMenu() : openMenu();
+  wrapper.classList.contains('menu-opened') ? closeMenu() : openMenu();
 }
 
 menuItem.forEach((elem, index) => {
@@ -69,12 +62,10 @@ function getRotateSide(index) {
   nextTab.innerHTML = tabsInner[index].innerHTML;
   contentTab.classList.add(`next-tab__${rotateSide[randomNumber]}`);
 
-  setTimeout(() => currentTab.innerHTML = nextTab.innerHTML, 1200);
-  setTimeout(() => contentTab.classList.remove(`next-tab__${rotateSide[randomNumber]}`), 1200);
-  getCurentTab(index);
+  showTab(rotateSide[randomNumber], index)
 };
 
-function showTab(side, tab) {
+function showTab(side, tab, onload) {
   if (tab >= menuItem.length) {
     tab = 0;
   } else if (tab < 0) {
@@ -82,25 +73,28 @@ function showTab(side, tab) {
   }
 
   nextTab.innerHTML = tabsInner[tab].innerHTML;
-  contentTab.classList.add(`next-tab__${side}`);
 
-  setTimeout(() => currentTab.innerHTML = nextTab.innerHTML, 1200);
-  setTimeout(() => contentTab.classList.remove(`next-tab__${side}`), 1200);
+  if (onload) {
+    currentTab.innerHTML = nextTab.innerHTML;
+  } else {
+    contentTab.classList.add(`next-tab__${side}`);
+    setTimeout(() => currentTab.innerHTML = nextTab.innerHTML, 1200);
+    setTimeout(() => contentTab.classList.remove(`next-tab__${side}`), 1200);
+  }
+
   getCurentTab(tab);
 };
 
 
 // toggle menu
 function openMenu() {
-  menuIcon.classList.add('opened');
-  menuIcon.classList.remove('closed');
-  menu.classList.add('active');
+  wrapper.classList.add('menu-opened');
+  wrapper.classList.remove('menu-closed');
 }
 
 function closeMenu() {
-  menuIcon.classList.add('closed');
-  menuIcon.classList.remove('opened');
-  menu.classList.remove('active');
+  wrapper.classList.remove('menu-opened');
+  wrapper.classList.add('menu-closed');
 }
 
 // others
@@ -108,9 +102,5 @@ function getCurentTab(index) {
   menuItem[index].classList.add('active');
   menuItem[previousTab].classList.remove('active');
   previousTab = index;
-}
-
-function showClickedArrow(arrow) {
-  arrow.classList.add('active');
-  setTimeout(() => arrow.classList.remove('active'), 200);
+  window.location.hash = pageTitle[index];
 }

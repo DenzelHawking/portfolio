@@ -74,10 +74,10 @@ body {
   /* animation-direction: alternate; */
 }
 
-.navigation-keyboard .arrow:hover,
+/* .navigation-keyboard .arrow:hover,
 .navigation-keyboard .arrow.active {
-  /* opacity: 1 !important; */
-}
+  opacity: 1 !important;
+} */
 
 
 .navigation-keyboard .arrot__up {
@@ -296,3 +296,9 @@ body {
     transform: scale(1) rotateY(-90deg);
   }
 }
+
+
+
+
+
+/* transfrom: translateZ(-1800px) translateX(-50%) rotateY(45deg) */
