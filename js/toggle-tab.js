@@ -24,6 +24,8 @@ window.onhashchange = () => verifyURL();
 
 // events
 document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeMenu();
+
   if (canClick) {
     if (e.key === 'ArrowUp') showTab('top', previousTab - 1);
     if (e.key === 'ArrowRight') showTab('right', previousTab + 1);
