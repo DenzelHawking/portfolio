@@ -1,10 +1,13 @@
 /* ========================
   imports css files
 ======================== */
-@import url(./contact.css);
-@import url(./cube.css);
 @import url(./menu.css);
-@import url(./project.css);
+@import url(./cube.css);
+@import url(./tabs/main.css);
+@import url(./tabs/about.css);
+@import url(./tabs/skills.css);
+@import url(./tabs/project.css);
+@import url(./tabs/contact.css);
 
 /* ========================
   main
