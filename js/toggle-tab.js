@@ -10,10 +10,13 @@ const menuIcon = document.querySelector('.menu__icon');
 const menuItem = document.querySelectorAll('.menu__item');
 
 // other variables
+let canClick = true;
+let previousTab;
 const rotateSide = ['top', 'bottom', 'left', 'right'];
 const pageTitle = ['#/main', '#/about', '#/skills', '#/projects', '#/contact'];
-let canClick = true;
-let previousTab = pageTitle.indexOf(window.location.hash);
+
+pageTitle.indexOf(window.location.hash) !== -1 ? previousTab = pageTitle.indexOf(window.location.hash) : previousTab = 0;
+
 
 verifyURL();
 window.onhashchange = () => verifyURL();
