@@ -71,7 +71,7 @@
   top: 0;
   left: 0;
   transform: translateZ(7.5vw);
-  background: url(../images/html_icon.png) center no-repeat;
+  background: url(../images/main/html_icon.png) center no-repeat;
   background-size: 50%;
 }
 
@@ -80,7 +80,7 @@
   left: -15vw;
   transform: translateZ(7.5vw) rotateY(-90deg);
   transform-origin: right;
-  background: url(../images/css_icon.png) center no-repeat;
+  background: url(../images/main/css_icon.png) center no-repeat;
   background-size: 50%;
 }
 
@@ -89,7 +89,7 @@
   left: 15vw;
   transform: translateZ(7.5vw) rotateY(90deg);
   transform-origin: left;
-  background: url(../images/js_icon.png) center no-repeat;
+  background: url(../images/main/js_icon.png) center no-repeat;
   background-size: 50%;
 }
 
@@ -98,7 +98,7 @@
   left: 0;
   transform: translateZ(7.5vw) rotateX(90deg);
   transform-origin: bottom;
-  background: url(../images/php_icon.png) center no-repeat;
+  background: url(../images/main/php_icon.png) center no-repeat;
   background-size: 50%;
 }
 
@@ -107,7 +107,7 @@
   left: 0;
   transform: translateZ(7.5vw) rotateX(-90deg);
   transform-origin: top;
-  background: url(../images/golang_icon.png) center no-repeat;
+  background: url(../images/main/golang_icon.png) center no-repeat;
   background-size: 50%;
 }
 
@@ -116,7 +116,7 @@
   left: 0;
   transform: translateZ(-7.5vw) rotateY(180deg);
   transform-origin: bottom;
-  background: url(../images/mysql_icon.png) center no-repeat;
+  background: url(../images/main/mysql_icon.png) center no-repeat;
   background-size: 50%;
 }
 
