@@ -1,0 +1,58 @@
+.navigation-keyboard {
+  position: absolute;
+  bottom: 2vw;
+  right: 2vw;
+  width: 15vw;
+  height: 8.2vw;
+  z-index: 9;
+}
+
+.navigation-keyboard .arrow {
+  position: absolute;
+  width: 4vw;
+  height: 4vw;
+  background: url(../images/main/arrow.png) center no-repeat;
+  background-size: 50%;
+  opacity: .5;
+  animation: arrowPulsation .5s linear infinite alternate;
+}
+
+.navigation-keyboard .arrot__up {
+  top: 0;
+  left: calc(50% - 2vw);
+  transform: rotate(-90deg);
+}
+
+.navigation-keyboard .arrot__down {
+  bottom: 0;
+  left: calc(50% - 2vw);
+  transform: rotate(90deg);
+}
+
+.navigation-keyboard .arrot__left {
+  bottom: 0;
+  left: 0;
+  transform: rotate(180deg);
+}
+
+.navigation-keyboard .arrot__right {
+  bottom: 0;
+  right: 0;
+}
+
+@keyframes arrowPulsation {
+  0% {
+    opacity: .5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  .navigation-keyboard {
+    display: none;
+  }
+}
