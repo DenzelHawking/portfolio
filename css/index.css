@@ -17,11 +17,11 @@
 body {
   width: 100vw;
   height: 100vh;
-  font-family: Arial;
   background: url(../images/main/background.jpg) center no-repeat;
   background-size: cover;
   margin: 0;
   padding: 0;
+  font-family: Arial;
   overflow: hidden;
 }
 
@@ -63,8 +63,8 @@ body {
   width: 100vw;
   height: 100vh;
   color: #fff;
-  transition: .5s;
   transform: rotateX(0deg) rotateY(0deg);
+  transition: .5s;
   transform-style: preserve-3d;
 }
 
@@ -90,8 +90,8 @@ body {
 
 .description {
   position: absolute;
-  left: 5vw;
   top: 15vw;
+  left: 5vw;
   width: 50%;
   font-size: 2vw;
   line-height: 1.5;
@@ -100,12 +100,21 @@ body {
 
 .main-tab .description {
   top: auto;
-  bottom: 0;
   left: 0;
+  bottom: 0;
   width: 100vw;
   text-align: center;
   padding: 8vw 15vw;
   box-sizing: border-box;
+}
+
+/*
+  image content
+======================== */
+.main-tab .page__images {
+  position: absolute;
+  background: rgba(97, 18, 18, .5);
+  pointer-events: none;
 }
 
 
@@ -118,20 +127,20 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  transform-origin: center;
-  transform: translateZ(50vh);
   background: radial-gradient(transparent, #071f32);
+  transform: translateZ(50vh);
+  transform-origin: center;
 }
 
 .next-tab {
   position: absolute;
   top: 0;
   left: 0;
-  transform: translateZ(-50vh) rotateX(90deg);
-  transform-origin: top;
   width: 100vw;
   height: 100vh;
   background: radial-gradient(transparent, #071f32);
+  transform: translateZ(-50vh) rotateX(90deg);
+  transform-origin: top;
 }
 
 .menu-opened .next-tab {
@@ -267,10 +276,3 @@ body {
     transform: scale(1) rotateY(-90deg);
   }
 }
-
-
-
-
-
-/* transform: translateZ(-1800px) translateX(-50%) translateY(50%) rotateY(45deg); */
-/* perspective: 1500px; */

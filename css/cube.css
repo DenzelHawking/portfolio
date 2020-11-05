@@ -2,11 +2,11 @@
   main
 ======================== */
 .skills-cube {
-  width: 26vw;
-  height: 22vw;
   position: absolute;
   top: calc(50% - 7.5vw);
   right: 15vw;
+  width: 26vw;
+  height: 22vw;
   transition: transform .5s;
   transform-style: preserve-3d;
 }
@@ -18,8 +18,8 @@
   left: calc(50% - 3.75vw);
   width: 7.5vw;
   height: 7.5vw;
-  border-radius: 7.5vw;
   background: radial-gradient(#0062ff, .75vw, transparent 62%);
+  border-radius: 7.5vw;
 }
 
 .skills-cube:hover {
@@ -70,54 +70,54 @@
 .skills-cube__side-0 {
   top: 0;
   left: 0;
-  transform: translateZ(7.5vw);
   background: url(../images/main/html_icon.png) center no-repeat;
   background-size: 50%;
+  transform: translateZ(7.5vw);
 }
 
 .skills-cube__side-1 {
   top: 0;
   left: -15vw;
-  transform: translateZ(7.5vw) rotateY(-90deg);
-  transform-origin: right;
   background: url(../images/main/css_icon.png) center no-repeat;
   background-size: 50%;
+  transform: translateZ(7.5vw) rotateY(-90deg);
+  transform-origin: right;
 }
 
 .skills-cube__side-2 {
   top: 0;
   left: 15vw;
-  transform: translateZ(7.5vw) rotateY(90deg);
-  transform-origin: left;
   background: url(../images/main/js_icon.png) center no-repeat;
   background-size: 50%;
+  transform: translateZ(7.5vw) rotateY(90deg);
+  transform-origin: left;
 }
 
 .skills-cube__side-3 {
   top: -15vw;
   left: 0;
-  transform: translateZ(7.5vw) rotateX(90deg);
-  transform-origin: bottom;
   background: url(../images/main/php_icon.png) center no-repeat;
   background-size: 50%;
+  transform: translateZ(7.5vw) rotateX(90deg);
+  transform-origin: bottom;
 }
 
 .skills-cube__side-4 {
   top: 15vw;
   left: 0;
-  transform: translateZ(7.5vw) rotateX(-90deg);
-  transform-origin: top;
   background: url(../images/main/golang_icon.png) center no-repeat;
   background-size: 50%;
+  transform: translateZ(7.5vw) rotateX(-90deg);
+  transform-origin: top;
 }
 
 .skills-cube__side-5 {
   top: 0;
   left: 0;
-  transform: translateZ(-7.5vw) rotateY(180deg);
-  transform-origin: bottom;
   background: url(../images/main/mysql_icon.png) center no-repeat;
   background-size: 50%;
+  transform: translateZ(-7.5vw) rotateY(180deg);
+  transform-origin: bottom;
 }
 
 

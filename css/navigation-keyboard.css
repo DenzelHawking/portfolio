@@ -24,14 +24,14 @@
 }
 
 .navigation-keyboard .arrot__down {
-  bottom: 0;
   left: calc(50% - 2vw);
+  bottom: 0;
   transform: rotate(90deg);
 }
 
 .navigation-keyboard .arrot__left {
-  bottom: 0;
   left: 0;
+  bottom: 0;
   transform: rotate(180deg);
 }
 
