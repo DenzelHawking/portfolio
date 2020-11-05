@@ -24,60 +24,51 @@ const pageInner = {
     tabClass: 'main',
     title: 'main',
     description: 'Мы воплощаем ваши идеи в экстраординарные продукты',
-    image: 'main.jpg'
+    image: ''
   },
   about: {
     tabClass: 'about-us',
     title: 'about us',
     description: 'Мы команда опытных специалистов работающих в сфере IT предоставляющие ... услуги на протяжении более 5 лет.',
-    image: 'main.jpg'
+    image: ''
   },
   skills: {
     tabClass: 'our-services',
     title: 'our services',
     description: 'Наша команда предоставляет професиональные услуги в IT секторе. В наш сектор услуг входит: Лэндинг пэйджы, интернет магазины, сайты визитки, крупные корпоротивные сайты, SEO продвижение и тд.',
-    image: 'main.jpg',
-    inner_data: cube
-    // cube
+    image: '',
+    innerData: cube
   },
   projects: {
     tabClass: 'our-projects',
     title: 'our projects',
     description: '',
-    image: 'main.jpg',
-    inner_data: projectList
-    // project
+    image: '',
+    innerData: projectList
   },
   contact: {
     tabClass: 'contact-us',
     title: 'contact us',
     description: '',
-    inner_data: ''
+    innerData: ''
     // form
   }
 }
 
-let tabName = window.location.hash.slice(2);
-
-let currentTabInner = '';
-let nextTabInner = '';
-
-
-
 function generationTabInner(tab) {
-  return `
-  <div class="${pageInner[tab].tabClass}-tab">
-    <div class="title">${pageInner[tab].title}</div>
-    <div class="description">
-      ${pageInner[tab].description}
-    </div>
+  let tabClass = pageInner[tab].tabClass || '';
+  let title = pageInner[tab].title || '';
+  let description = pageInner[tab].description || '';
+  let innerData = pageInner[tab].innerData || '';
 
-    ${pageInner[tab].inner_data}
-    
+  return `
+  <div class="${tabClass}-tab">
+    <div class="title">${title}</div>
+    <div class="description">
+      ${description}
+    </div>
+    ${innerData}
     <div class="page__images"></div>
   </div>
   `
 }
-
-
-// currentTab.innerHTML = generationTabInner(pageInner[tabName])

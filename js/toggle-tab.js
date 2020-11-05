@@ -33,14 +33,14 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') showTab('left', getTitleOnKeyPress(previousTab - 1));
     if (e.key === 'ArrowDown') showTab('bottom', getTitleOnKeyPress(previousTab + 1));
 
-    letClick(1200)
+    letClick(1200);
   }
 })
 
 menuIcon.onclick = () => {
   if (canClick) {
     wrapper.classList.contains('menu-opened') ? closeMenu() : openMenu();
-    letClick(500)
+    letClick(500);
   }
 }
 
@@ -54,17 +54,16 @@ menuItem.forEach((elem, index) => {
 
 // toggle tab
 function showTab(side, tabName, onload) {
-  nextTab.innerHTML = generationTabInner(tabName);
-
   if (onload) {
-    currentTab.innerHTML = nextTab.innerHTML;
+    currentTab.innerHTML = generationTabInner(tabName);
   } else {
     contentTab.classList.add(`next-tab__${side}`);
+    nextTab.innerHTML = generationTabInner(tabName);
+
     setTimeout(() => {
       currentTab.innerHTML = generationTabInner(tabName);
       contentTab.classList.remove(`next-tab__${side}`);
-
-      // remove next tab inner
+      setTimeout(() => nextTab.innerHTML = '', 0);
     }, 1200);
   }
 
@@ -90,7 +89,9 @@ function getCurentTab(index) {
   menuItem[previousTab].classList.remove('active');
   menuItem[index].classList.add('active');
   previousTab = index;
-  setTimeout(() => {window.location.hash = `#/${pageTitle[index]}`, hashName = window.location.hash.slice(2)}, 1200)
+  setTimeout(() => {
+    window.location.hash = `#/${pageTitle[index]}`, hashName = window.location.hash.slice(2);
+  }, 1200);
 }
 
 function getTitleOnKeyPress(pageTitleIndex) {
@@ -100,7 +101,7 @@ function getTitleOnKeyPress(pageTitleIndex) {
     pageTitleIndex = menuItem.length - 1;
   }
 
-  return pageTitle[pageTitleIndex]
+  return pageTitle[pageTitleIndex];
 }
 
 function letClick(timeout) {
