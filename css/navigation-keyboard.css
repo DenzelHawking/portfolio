@@ -1,3 +1,6 @@
+/* ========================
+  main
+======================== */
 .navigation-keyboard {
   position: absolute;
   bottom: 2vw;
@@ -40,6 +43,9 @@
   right: 0;
 }
 
+/* ========================
+  animation
+======================== */
 @keyframes arrowPulsation {
   0% {
     opacity: .5;
@@ -50,7 +56,9 @@
   }
 }
 
-
+/* ========================
+  adaptive
+======================== */
 @media screen and (max-width: 500px) {
   .navigation-keyboard {
     display: none;

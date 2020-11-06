@@ -3,10 +3,6 @@
 ======================== */
 .skills-cube {
   position: absolute;
-  top: calc(50% - 7.5vw);
-  right: 15vw;
-  width: 26vw;
-  height: 22vw;
   transition: transform .5s;
   transform-style: preserve-3d;
 }
@@ -14,24 +10,19 @@
 .skills-cube::before {
   content: '';
   position: absolute;
-  top: calc(50% - 3.75vw);
-  left: calc(50% - 3.75vw);
-  width: 7.5vw;
-  height: 7.5vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: radial-gradient(#0062ff, .75vw, transparent 62%);
-  border-radius: 7.5vw;
-}
-
-.skills-cube:hover {
-  transform: scale(1.2);
+  border-radius: 100vw;
 }
 
 .skills-cube__inner {
   position: absolute;
-  top: calc(50% - 7.5vw);
+  /* top: calc(50% - 7.5vw);
   right: calc(50% - 7.5vw);
   width: 15vw;
-  height: 15vw;
+  height: 15vw; */
   transform-style: preserve-3d;
 }
 
@@ -41,14 +32,7 @@
 
 .skills-cube__side {
   position: absolute;
-  width: 15vw;
-  height: 15vw;
-  filter: brightness(.3);
   transition: .5s;
-}
-
-.skills-cube:hover .skills-cube__side {
-  filter: brightness(1);
 }
 
 .skills-cube__side::before {
@@ -58,7 +42,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  /* background-image: radial-gradient(transparent, #000000ba); */
   background: radial-gradient(transparent, #002643);
 }
 
@@ -66,48 +49,47 @@
 /*
   skills cube property
 ======================== */
-
 .skills-cube__side-0 {
   top: 0;
   left: 0;
   background: url(../images/main/html_icon.png) center no-repeat;
   background-size: 50%;
-  transform: translateZ(7.5vw);
+  /* transform: translateZ(7.5vw); */
 }
 
 .skills-cube__side-1 {
   top: 0;
-  left: -15vw;
+  /* left: -15vw; */
   background: url(../images/main/css_icon.png) center no-repeat;
   background-size: 50%;
-  transform: translateZ(7.5vw) rotateY(-90deg);
+  /* transform: translateZ(7.5vw) rotateY(-90deg); */
   transform-origin: right;
 }
 
 .skills-cube__side-2 {
   top: 0;
-  left: 15vw;
+  /* left: 15vw; */
   background: url(../images/main/js_icon.png) center no-repeat;
   background-size: 50%;
-  transform: translateZ(7.5vw) rotateY(90deg);
+  /* transform: translateZ(7.5vw) rotateY(90deg); */
   transform-origin: left;
 }
 
 .skills-cube__side-3 {
-  top: -15vw;
+  /* top: -15vw; */
   left: 0;
   background: url(../images/main/php_icon.png) center no-repeat;
   background-size: 50%;
-  transform: translateZ(7.5vw) rotateX(90deg);
+  /* transform: translateZ(7.5vw) rotateX(90deg); */
   transform-origin: bottom;
 }
 
 .skills-cube__side-4 {
-  top: 15vw;
+  /* top: 15vw; */
   left: 0;
   background: url(../images/main/golang_icon.png) center no-repeat;
   background-size: 50%;
-  transform: translateZ(7.5vw) rotateX(-90deg);
+  /* transform: translateZ(7.5vw) rotateX(-90deg); */
   transform-origin: top;
 }
 
@@ -116,15 +98,135 @@
   left: 0;
   background: url(../images/main/mysql_icon.png) center no-repeat;
   background-size: 50%;
-  transform: translateZ(-7.5vw) rotateY(180deg);
+  /* transform: translateZ(-7.5vw) rotateY(180deg); */
   transform-origin: bottom;
+}
+
+@media screen and (min-width: 768px) {
+  .skills-cube {
+    top: calc(50% - 7.5vw);
+    right: 15vw;
+    width: 26vw;
+    height: 22vw;
+  }
+
+  .skills-cube:hover {
+    transform: scale(1.2);
+  }
+
+  /* ---------- */
+  .skills-cube::before {
+    width: 7.5vw;
+    height: 7.5vw;
+  }
+
+  .skills-cube__inner {
+    top: calc(50% - 7.5vw);
+    right: calc(50% - 7.5vw);
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .skills-cube__side {
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .skills-cube__side-0 {
+    transform: translateZ(7.5vw);
+  }
+
+  .skills-cube__side-1 {
+    left: -15vw;
+    transform: translateZ(7.5vw) rotateY(-90deg);
+  }
+
+  .skills-cube__side-2 {
+    left: 15vw;
+    transform: translateZ(7.5vw) rotateY(90deg);
+  }
+
+  .skills-cube__side-3 {
+    top: -15vw;
+    transform: translateZ(7.5vw) rotateX(90deg);
+  }
+
+  .skills-cube__side-4 {
+    top: 15vw;
+    transform: translateZ(7.5vw) rotateX(-90deg);
+  }
+
+  .skills-cube__side-5 {
+    transform: translateZ(-7.5vw) rotateY(180deg);
+  }
+
+  /* ---------- */
+
+  .skills-cube__side {
+    filter: brightness(.3);
+  }
+
+  .skills-cube:hover .skills-cube__side {
+    filter: brightness(1);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .skills-cube {
+    top: 30vh;
+    left: 50vw;
+  }
+
+  .skills-cube::before {
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .skills-cube__inner {
+    top: calc(50% - 15vw);
+    right: calc(50% - 15vw);
+    width: 30vw;
+    height: 30vw;
+  }
+
+  .skills-cube__side {
+    width: 30vw;
+    height: 30vw;
+  }
+
+  .skills-cube__side-0 {
+    transform: translateZ(15vw);
+  }
+
+  .skills-cube__side-1 {
+    left: -30vw;
+    transform: translateZ(15vw) rotateY(-90deg);
+  }
+
+  .skills-cube__side-2 {
+    left: 30vw;
+    transform: translateZ(15vw) rotateY(90deg);
+  }
+
+  .skills-cube__side-3 {
+    top: -30vw;
+    transform: translateZ(15vw) rotateX(90deg);
+  }
+
+  .skills-cube__side-4 {
+    top: 30vw;
+    transform: translateZ(15vw) rotateX(-90deg);
+  }
+
+  .skills-cube__side-5 {
+    transform: translateZ(-15vw) rotateY(180deg);
+  }
 }
 
 
 /* ========================
   animation
 ======================== */
-
 @keyframes rotateCube {
   0% {
     transform: rotateY(0deg) rotateX(0deg);

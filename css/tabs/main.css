@@ -1,6 +1,47 @@
+/* ========================
+  main
+======================== */
 .main-tab .page__images {
+  position: absolute;
   top: 10vh;
-  left: 25vw;
-  bottom: 30vh;
-  width: 50vw;
+  background: rgba(97, 18, 18, .5);
+  pointer-events: none;
+}
+
+.main-tab .description {
+  top: auto;
+  left: 0;
+  width: 100vw;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+
+/* ========================
+  adaptive
+======================== */
+@media screen and (min-width: 768px) {
+  .main-tab .page__images {
+    left: 25vw;
+    bottom: 30vh;
+    width: 50vw;
+  }
+
+  .main-tab .description {
+    bottom: 8vw;
+    padding: 0 15vw;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .main-tab .page__images {
+    left: 15vw;
+    bottom: 40vh;
+    width: 70vw;
+  }
+
+  .main-tab .description {
+    bottom: 15vw;
+    padding: 0 5vw;
+  }
 }
