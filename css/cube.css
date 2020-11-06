@@ -12,17 +12,13 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   background: radial-gradient(#0062ff, .75vw, transparent 62%);
   border-radius: 100vw;
+  transform: translate(-50%, -50%);
 }
 
 .skills-cube__inner {
   position: absolute;
-  /* top: calc(50% - 7.5vw);
-  right: calc(50% - 7.5vw);
-  width: 15vw;
-  height: 15vw; */
   transform-style: preserve-3d;
 }
 
@@ -54,42 +50,33 @@
   left: 0;
   background: url(../images/main/html_icon.png) center no-repeat;
   background-size: 50%;
-  /* transform: translateZ(7.5vw); */
 }
 
 .skills-cube__side-1 {
   top: 0;
-  /* left: -15vw; */
   background: url(../images/main/css_icon.png) center no-repeat;
   background-size: 50%;
-  /* transform: translateZ(7.5vw) rotateY(-90deg); */
   transform-origin: right;
 }
 
 .skills-cube__side-2 {
   top: 0;
-  /* left: 15vw; */
   background: url(../images/main/js_icon.png) center no-repeat;
   background-size: 50%;
-  /* transform: translateZ(7.5vw) rotateY(90deg); */
   transform-origin: left;
 }
 
 .skills-cube__side-3 {
-  /* top: -15vw; */
   left: 0;
   background: url(../images/main/php_icon.png) center no-repeat;
   background-size: 50%;
-  /* transform: translateZ(7.5vw) rotateX(90deg); */
   transform-origin: bottom;
 }
 
 .skills-cube__side-4 {
-  /* top: 15vw; */
   left: 0;
   background: url(../images/main/golang_icon.png) center no-repeat;
   background-size: 50%;
-  /* transform: translateZ(7.5vw) rotateX(-90deg); */
   transform-origin: top;
 }
 
@@ -98,7 +85,6 @@
   left: 0;
   background: url(../images/main/mysql_icon.png) center no-repeat;
   background-size: 50%;
-  /* transform: translateZ(-7.5vw) rotateY(180deg); */
   transform-origin: bottom;
 }
 
@@ -114,7 +100,6 @@
     transform: scale(1.2);
   }
 
-  /* ---------- */
   .skills-cube::before {
     width: 7.5vw;
     height: 7.5vw;
@@ -130,6 +115,11 @@
   .skills-cube__side {
     width: 15vw;
     height: 15vw;
+    filter: brightness(.3);
+  }
+
+  .skills-cube:hover .skills-cube__side {
+    filter: brightness(1);
   }
 
   .skills-cube__side-0 {
@@ -158,16 +148,6 @@
 
   .skills-cube__side-5 {
     transform: translateZ(-7.5vw) rotateY(180deg);
-  }
-
-  /* ---------- */
-
-  .skills-cube__side {
-    filter: brightness(.3);
-  }
-
-  .skills-cube:hover .skills-cube__side {
-    filter: brightness(1);
   }
 }
 
