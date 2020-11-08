@@ -36,6 +36,19 @@ body {
   height: 100%;
 }
 
+/* div#logo {
+  position: absolute;
+  left: 3.5vw;
+  bottom: 2vw;
+  width: 13vw;
+  height: 5vw;
+  background: url(../images/main/logo_1.png) center no-repeat;
+  background-size: contain;
+  filter: drop-shadow(5px 3px 2px #015b8f);
+  pointer-events: none;
+  z-index: 9;
+} */
+
 .wrapper {
   position: absolute;
   top: 0;

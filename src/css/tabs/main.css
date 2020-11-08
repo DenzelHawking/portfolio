@@ -4,8 +4,11 @@
 .main-tab .page__images {
   position: absolute;
   top: 10vh;
-  background: rgba(97, 18, 18, .5);
+  background: url(../../images/main/logo.png) 50% 10% no-repeat;
+  background-size: contain;
+  filter: drop-shadow(0vw 0vw .2vw #015b8f) brightness(0);
   pointer-events: none;
+  animation: turnOn 1s linear .5s forwards;
 }
 
 .main-tab .description {
@@ -43,5 +46,22 @@
   .main-tab .description {
     bottom: 15vw;
     padding: 0 5vw;
+  }
+}
+
+/* ========================
+  animation
+======================== */
+@keyframes turnOn {
+  18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92% {
+    filter: drop-shadow(0vw 0vw .5vw #015b8f) brightness(1);
+  }
+
+  0%, 18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%  {
+    filter: drop-shadow(0vw 0vw .2vw #015b8f) brightness(0);
+  }
+
+  100% {
+    filter: drop-shadow(0vw 0vw 1vw #015b8f) brightness(1.5);
   }
 }
