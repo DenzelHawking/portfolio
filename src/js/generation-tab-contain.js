@@ -1,4 +1,4 @@
-const cube = `<div class="skills-cube">
+const skillsCube = `<div class="skills-cube">
                 <div class="skills-cube__inner">
                   <div class="skills-cube__side skills-cube__side-0"></div>
                   <div class="skills-cube__side skills-cube__side-1"></div>
@@ -18,6 +18,13 @@ const projectList = `<div class="project__list">
                 <div class="project__item project__item-5"><div class="project__image"></div></div>
               </div>`;
 
+const form = `<form id="sendForm">
+                <input type="text" name="name" placeholder="Имя" required>
+                <input type="email" name="mail" placeholder="Почта" required>
+                <textarea name="message" placeholder="Расскажите о своем проекте"></textarea>
+                <button>Отправить</button>
+              </form>`;
+
 const pageInner = {
   main: {
     tabClass: "main",
@@ -28,17 +35,15 @@ const pageInner = {
   about: {
     tabClass: "about-us",
     title: "about us",
-    description:
-      "Мы команда опытных специалистов работающих в сфере IT предоставляющие ... услуги на протяжении более 5 лет.",
+    description: "Мы команда опытных специалистов работающих в сфере IT предоставляющие ... услуги на протяжении более 5 лет.",
     image: "",
   },
   skills: {
     tabClass: "our-services",
     title: "our services",
-    description:
-      "Наша команда предоставляет професиональные услуги в IT секторе. В наш сектор услуг входит: Лэндинг пэйджы, интернет магазины, сайты визитки, крупные корпоротивные сайты, SEO продвижение и тд.",
+    description: "Наша команда предоставляет професиональные услуги в IT секторе. В наш сектор услуг входит: Лэндинг пэйджы, интернет магазины, сайты визитки, крупные корпоротивные сайты, SEO продвижение и тд.",
     image: "",
-    innerData: cube,
+    innerData: skillsCube,
   },
   projects: {
     tabClass: "our-projects",
@@ -51,7 +56,7 @@ const pageInner = {
     tabClass: "contact-us",
     title: "contact us",
     description: "",
-    innerData: "",
+    innerData: form,
     // form
   },
 };
