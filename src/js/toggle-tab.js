@@ -1,10 +1,11 @@
+// imports
 import generationTabInner from "./generation-tab-contain.js";
+
 // content variables
 const wrapper = document.querySelector(".wrapper");
 const contentTab = document.querySelector(".content__tab-cube");
 const currentTab = document.querySelector(".current-tab");
 const nextTab = document.querySelector(".next-tab");
-const tabsInner = document.querySelectorAll(".pages");
 
 // menu variables
 const menuIcon = document.querySelector(".menu__icon");
