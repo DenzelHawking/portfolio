@@ -4,36 +4,35 @@
   fonts
 ======================== */
 @font-face {
-	font-family: 'Jura';
-	src: url('../fonts/Jura-Light.ttf');
-	font-weight: 300;
-	font-style: normal;
+  font-family: "Jura";
+  src: url("../fonts/Jura-Light.ttf");
+  font-weight: 300;
+  font-style: normal;
 }
 @font-face {
-	font-family: 'Jura';
-	src: url('../fonts/Jura-Regular.ttf');
-	font-weight: 400;
-	font-style: normal;
+  font-family: "Jura";
+  src: url("../fonts/Jura-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
 }
 @font-face {
-	font-family: 'Jura';
-	src: url('../fonts/Jura-Medium.ttf');
-	font-weight: 500;
-	font-style: normal;
+  font-family: "Jura";
+  src: url("../fonts/Jura-Medium.ttf");
+  font-weight: 500;
+  font-style: normal;
 }
 @font-face {
-	font-family: 'Jura';
-	src: url('../fonts/Jura-SemiBold.ttf');
-	font-weight: 600;
-	font-style: normal;
+  font-family: "Jura";
+  src: url("../fonts/Jura-SemiBold.ttf");
+  font-weight: 600;
+  font-style: normal;
 }
 @font-face {
-	font-family: 'Jura';
-	src: url('../fonts/Jura-Bold.ttf');
-	font-weight: 700;
-	font-style: normal;
+  font-family: "Jura";
+  src: url("../fonts/Jura-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
 }
-
 
 /* ========================
   main
@@ -46,7 +45,7 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  font-family: 'Jura', sans-serif;
+  font-family: "Jura", sans-serif;
 }
 
 #particles-js {
@@ -61,70 +60,6 @@ body {
   width: 100%;
   height: 100%;
 }
-
-
-/* ========================
-  preloader
-======================== */
-.loader {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: #051c2d;
-  z-index: 99999;
-  justify-content: center;
-  align-items: center;
-}
-
-body:not(.loaded) .loader {
-  display: flex;
-}
-
-.lds-ring {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
-}
-
-.lds-ring div {
-  display: block;
-  position: absolute;
-  width: 64px;
-  height: 64px;
-  border: 8px solid #fff;
-  border-color: #fff transparent transparent transparent;
-  border-radius: 50%;
-  margin: 8px;
-  box-sizing: border-box;
-  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-}
-
-.lds-ring div:nth-child(1) {
-  animation-delay: -0.45s;
-}
-
-.lds-ring div:nth-child(2) {
-  animation-delay: -0.3s;
-}
-
-.lds-ring div:nth-child(3) {
-  animation-delay: -0.15s;
-}
-
-@keyframes lds-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 
 /* ========================
   content
@@ -151,7 +86,6 @@ body:not(.loaded) .loader {
   transform-style: flat;
 }
 
-
 /*
   text content
 ======================== */
@@ -165,7 +99,6 @@ body:not(.loaded) .loader {
   box-sizing: border-box;
   pointer-events: none;
 }
-
 
 /*
   cube inner
@@ -195,7 +128,6 @@ body:not(.loaded) .loader {
 .menu-opened .next-tab {
   opacity: 0;
 }
-
 
 /*
   next tab position
@@ -230,7 +162,6 @@ body:not(.loaded) .loader {
   transform: translateZ(50vw);
 }
 
-
 /*
   attache animation
 ======================== */
@@ -250,13 +181,12 @@ body:not(.loaded) .loader {
   animation: rotateContentCubeRight 1.2s linear;
 }
 
-
 /* ========================
   adaptive
 ======================== */
 @media screen and (min-width: 768px) {
   .content__tab-cube {
-    transition: .5s;
+    transition: 0.5s;
   }
 
   .menu-opened .content__tab-cube {
@@ -276,7 +206,7 @@ body:not(.loaded) .loader {
 
 @media screen and (max-width: 767px) {
   .content__tab-cube {
-    transition: .3s;
+    transition: 0.3s;
   }
 
   .menu-opened .content__tab-cube {
@@ -295,7 +225,6 @@ body:not(.loaded) .loader {
   }
 }
 
-
 /* ========================
   animation
 ======================== */
@@ -305,11 +234,11 @@ body:not(.loaded) .loader {
   }
 
   30% {
-    transform: scale(.7);
+    transform: scale(0.7);
   }
 
   70% {
-    transform: scale(.7) rotateX(-90deg);
+    transform: scale(0.7) rotateX(-90deg);
   }
 
   100% {
@@ -323,11 +252,11 @@ body:not(.loaded) .loader {
   }
 
   30% {
-    transform: scale(.7);
+    transform: scale(0.7);
   }
 
   70% {
-    transform: scale(.7) rotateX(90deg);
+    transform: scale(0.7) rotateX(90deg);
   }
 
   100% {
@@ -341,11 +270,11 @@ body:not(.loaded) .loader {
   }
 
   30% {
-    transform: scale(.7);
+    transform: scale(0.7);
   }
 
   70% {
-    transform: scale(.7) rotateY(90deg);
+    transform: scale(0.7) rotateY(90deg);
   }
 
   100% {
@@ -359,18 +288,17 @@ body:not(.loaded) .loader {
   }
 
   30% {
-    transform: scale(.7);
+    transform: scale(0.7);
   }
 
   70% {
-    transform: scale(.7) rotateY(-90deg);
+    transform: scale(0.7) rotateY(-90deg);
   }
 
   100% {
     transform: scale(1) rotateY(-90deg);
   }
 }
-
 
 /* ========================
   imports css files
