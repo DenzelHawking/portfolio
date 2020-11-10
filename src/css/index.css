@@ -1,21 +1,38 @@
-/*
-1200
-992
-767
-550
-*/
+/*1200 | 992 | 767 | 550 */
 
 /* ========================
-  imports css files
+  fonts
 ======================== */
-@import url(./menu.css);
-@import url(./cube.css);
-@import url(./navigation-keyboard.css);
-@import url(./tabs/main.css);
-@import url(./tabs/about.css);
-@import url(./tabs/skills.css);
-@import url(./tabs/project.css);
-@import url(./tabs/contact.css);
+@font-face {
+	font-family: 'Jura';
+	src: url('../fonts/Jura-Light.ttf');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Jura';
+	src: url('../fonts/Jura-Regular.ttf');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Jura';
+	src: url('../fonts/Jura-Medium.ttf');
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Jura';
+	src: url('../fonts/Jura-SemiBold.ttf');
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Jura';
+	src: url('../fonts/Jura-Bold.ttf');
+	font-weight: 700;
+	font-style: normal;
+}
 
 
 /* ========================
@@ -29,6 +46,7 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  font-family: 'Jura', sans-serif;
 }
 
 #particles-js {
@@ -352,3 +370,16 @@ body:not(.loaded) .loader {
     transform: scale(1) rotateY(-90deg);
   }
 }
+
+
+/* ========================
+  imports css files
+======================== */
+@import url(./menu.css);
+@import url(./cube.css);
+@import url(./navigation-keyboard.css);
+@import url(./tabs/main.css);
+@import url(./tabs/about.css);
+@import url(./tabs/skills.css);
+@import url(./tabs/project.css);
+@import url(./tabs/contact.css);
