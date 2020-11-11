@@ -19,11 +19,11 @@ module.exports = {
       },
       {
         test: /\.(woff(2)?|ttf|eot|svg|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'file-loader',
+        loader: "file-loader",
         options: {
-          name: 'fonts/[name].[ext]?[hash]',
-        }
-      }
+          name: "fonts/[name].[ext]?[hash]",
+        },
+      },
     ],
   },
   devServer: {

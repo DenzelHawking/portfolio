@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dist": "webpack",
-    "serve": "webpack serve"
+    "serve": "webpack serve",
+    "analyze:create": "webpack --json > stats.json",
+    "analyze:run": "webpack-bundle-analyzer stats.json"
   },
   "repository": {
     "type": "git",
