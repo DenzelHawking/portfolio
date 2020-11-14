@@ -33,6 +33,10 @@ textarea::placeholder {
   color: #fff;
 }
 
+input:invalid {
+  background: rgba(7, 31, 49, .9);
+}
+
 textarea {
   height: 12vw;
   resize: none;
