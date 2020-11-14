@@ -67,6 +67,14 @@ export default function generationTabInner(tab) {
   let description = pageInner[tab].description || "";
   let innerData = pageInner[tab].innerData || "";
 
+  // setTimeout(() => {
+  //   let form = document.querySelector('#sendForm');
+  //   form.onsubmit = () => {
+  //     sendForm(e);
+  //   }
+  // }, 0)
+
+
   return `
   <div class="${tabClass}-tab">
     <div class="title">${title}</div>

@@ -1,5 +1,6 @@
 // imports
 import generationTabInner from "./generation-tab-contain.js";
+import sendForm from "./request-form.js";
 
 // content variables
 const wrapper = document.querySelector(".wrapper");
@@ -19,28 +20,26 @@ let previousTab;
 const rotateSide = ["top", "bottom", "left", "right"];
 const pageTitle = ["main", "about", "skills", "projects", "contact"];
 
-pageTitle.indexOf(hashName) !== -1
-  ? (previousTab = pageTitle.indexOf(hashName))
-  : (previousTab = 0),
+// pageTitle.indexOf(hashName) !== -1 ? (previousTab = pageTitle.indexOf(hashName)) : (previousTab = 0), (hashName = pageTitle[previousTab]);
+if (pageTitle.indexOf(hashName) !== -1) {
+  (previousTab = pageTitle.indexOf(hashName));
+} else {
+  (previousTab = 0);
   (hashName = pageTitle[previousTab]);
+}
 
 verifyURL();
 window.onhashchange = () => verifyURL();
 
 // events
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && wrapper.classList.contains("menu-opened"))
-    closeMenu();
+  if (e.key === "Escape" && wrapper.classList.contains("menu-opened")) closeMenu();
 
   if (canClick) {
-    if (e.key === "ArrowUp")
-      showTab("top", getTitleOnKeyPress(previousTab - 1));
-    if (e.key === "ArrowRight")
-      showTab("right", getTitleOnKeyPress(previousTab + 1));
-    if (e.key === "ArrowLeft")
-      showTab("left", getTitleOnKeyPress(previousTab - 1));
-    if (e.key === "ArrowDown")
-      showTab("bottom", getTitleOnKeyPress(previousTab + 1));
+    if (e.key === "ArrowUp") showTab("top", getTitleOnKeyPress(previousTab - 1));
+    if (e.key === "ArrowRight") showTab("right", getTitleOnKeyPress(previousTab + 1));
+    if (e.key === "ArrowLeft") showTab("left", getTitleOnKeyPress(previousTab - 1));
+    if (e.key === "ArrowDown") showTab("bottom", getTitleOnKeyPress(previousTab + 1));
 
     letClick(1200);
   }
@@ -55,12 +54,7 @@ menuIcon.onclick = () => {
 
 menuItem.forEach((elem, index) => {
   elem.onclick = () => {
-    if (previousTab !== index)
-      setTimeout(
-        () =>
-          showTab(rotateSide[Math.floor(Math.random() * 4)], pageTitle[index]),
-        500
-      );
+    if (previousTab !== index) setTimeout(() => showTab(rotateSide[Math.floor(Math.random() * 4)], pageTitle[index]), 500);
     closeMenu();
   };
 });
@@ -75,6 +69,12 @@ function showTab(side, tabName, onload) {
 
     setTimeout(() => {
       currentTab.innerHTML = generationTabInner(tabName);
+
+      // send form function
+      setTimeout(() => {
+        if (hashName === 'contact') sendForm()
+      }, 0);
+
       contentTab.classList.remove(`next-tab__${side}`);
       setTimeout(() => (nextTab.innerHTML = ""), 0);
     }, 1200);
@@ -103,7 +103,7 @@ function getCurentTab(index) {
   previousTab = index;
   setTimeout(() => {
     (window.location.hash = `#/${pageTitle[index]}`),
-      (hashName = window.location.hash.slice(2));
+    (hashName = window.location.hash.slice(2));
   }, 1200);
 }
 
@@ -124,7 +124,6 @@ function letClick(timeout) {
 
 function verifyURL() {
   hashName = window.location.hash.slice(2);
-  if (!pageTitle.includes(hashName))
-    (window.location.hash = "#/main"), (hashName = "main");
+  if (!pageTitle.includes(hashName)) (window.location.hash = "#/main"), (hashName = "main");
   showTab("", hashName, true);
 }
